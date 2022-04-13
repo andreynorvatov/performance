@@ -1,4 +1,5 @@
 # Performance
+
 dir's:
-* jmeter - jmeter app's v.5.4.3 + Plugins
-* scripts - scripts for perfomance tests
+* jmeter - tuned jmeter app v.5.4.3 + Plugins 
+* scripts - perfomance tests stipts
