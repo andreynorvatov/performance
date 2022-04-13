@@ -16,13 +16,13 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="DUR_TIME" elementType="Argument">
             <stringProp name="Argument.name">DUR_TIME</stringProp>
-            <stringProp name="Argument.value">600</stringProp>
+            <stringProp name="Argument.value">60</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">продолжительность теста, сек</stringProp>
           </elementProp>
           <elementProp name="VU_RAMPUP" elementType="Argument">
             <stringProp name="Argument.name">VU_RAMPUP</stringProp>
-            <stringProp name="Argument.value">120</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">время выхода на нагрузку, сек</stringProp>
           </elementProp>
@@ -57,65 +57,118 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="UDV MAIN_test_data" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="UDV VUSERS" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="NOTE_TITLE" elementType="Argument">
-            <stringProp name="Argument.name">NOTE_TITLE</stringProp>
-            <stringProp name="Argument.value">${__RandomString(6, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+          <elementProp name="UC01_VU" elementType="Argument">
+            <stringProp name="Argument.name">UC01_VU</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="NOTE_SLUG" elementType="Argument">
-            <stringProp name="Argument.name">NOTE_SLUG</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+          <elementProp name="UC02_VU" elementType="Argument">
+            <stringProp name="Argument.name">UC02_VU</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="NOTE_BODY" elementType="Argument">
-            <stringProp name="Argument.name">NOTE_BODY</stringProp>
-            <stringProp name="Argument.value">${__RandomString(15, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+          <elementProp name="UC03_VU" elementType="Argument">
+            <stringProp name="Argument.name">UC03_VU</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="NOTE_NEW_TITLE" elementType="Argument">
-            <stringProp name="Argument.name">NOTE_NEW_TITLE</stringProp>
-            <stringProp name="Argument.value">${__RandomString(3, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="NOTE_NEW_SLUG" elementType="Argument">
-            <stringProp name="Argument.name">NOTE_NEW_SLUG</stringProp>
-            <stringProp name="Argument.value"></stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="NOTE_NEW_BODY" elementType="Argument">
-            <stringProp name="Argument.name">NOTE_NEW_BODY</stringProp>
-            <stringProp name="Argument.value">${__RandomString(9, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+          <elementProp name="UC04_VU" elementType="Argument">
+            <stringProp name="Argument.name">UC04_VU</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="UDV VUSERS" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="UDV PACING" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="UC01_VU" elementType="Argument">
-            <stringProp name="Argument.name">UC01_VU</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+          <elementProp name="UC01_PACING" elementType="Argument">
+            <stringProp name="Argument.name">UC01_PACING</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="UC02_VU" elementType="Argument">
-            <stringProp name="Argument.name">UC02_VU</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+          <elementProp name="UC02_PACING" elementType="Argument">
+            <stringProp name="Argument.name">UC02_PACING</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="UC03_VU" elementType="Argument">
-            <stringProp name="Argument.name">UC03_VU</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+          <elementProp name="UC03_PACING" elementType="Argument">
+            <stringProp name="Argument.name">UC03_PACING</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="UC04_VU" elementType="Argument">
-            <stringProp name="Argument.name">UC04_VU</stringProp>
-            <stringProp name="Argument.value"></stringProp>
+          <elementProp name="UC04_PACING" elementType="Argument">
+            <stringProp name="Argument.name">UC04_PACING</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="UC05_PACING" elementType="Argument">
+            <stringProp name="Argument.name">UC05_PACING</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
+      <hashTree/>
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="false">
+        <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="influxdbMetricsSender" elementType="Argument">
+              <stringProp name="Argument.name">influxdbMetricsSender</stringProp>
+              <stringProp name="Argument.value">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbUrl" elementType="Argument">
+              <stringProp name="Argument.name">influxdbUrl</stringProp>
+              <stringProp name="Argument.value">http://192.168.1.90:8086/api/v2/write?org=lanit&amp;bucket=Jmeter_log_v2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="application" elementType="Argument">
+              <stringProp name="Argument.name">application</stringProp>
+              <stringProp name="Argument.value">NOTES</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="measurement" elementType="Argument">
+              <stringProp name="Argument.name">measurement</stringProp>
+              <stringProp name="Argument.value">NOTES</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="summaryOnly" elementType="Argument">
+              <stringProp name="Argument.name">summaryOnly</stringProp>
+              <stringProp name="Argument.value">false</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="samplersRegex" elementType="Argument">
+              <stringProp name="Argument.name">samplersRegex</stringProp>
+              <stringProp name="Argument.value">.*</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="percentiles" elementType="Argument">
+              <stringProp name="Argument.name">percentiles</stringProp>
+              <stringProp name="Argument.value">95</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="testTitle" elementType="Argument">
+              <stringProp name="Argument.name">testTitle</stringProp>
+              <stringProp name="Argument.value">Test name</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="eventTags" elementType="Argument">
+              <stringProp name="Argument.name">eventTags</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="influxdbToken" elementType="Argument">
+              <stringProp name="Argument.name">influxdbToken</stringProp>
+              <stringProp name="Argument.value">9nBK4KAq2Jdfs6rNU8zzfLSAJx9nUwUtjavbyUq93ySXvMFIEbcFHhVLP4vL6eaeiMFUUkOk17Lvr93UPFuL9g==</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </elementProp>
+        <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
+      </BackendListener>
       <hashTree/>
       <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -136,8 +189,8 @@
             <subresults>true</subresults>
             <responseData>false</responseData>
             <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>true</fieldNames>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
             <responseHeaders>false</responseHeaders>
             <requestHeaders>false</requestHeaders>
             <responseDataOnError>false</responseDataOnError>
@@ -145,13 +198,12 @@
             <assertionsResultsToSave>0</assertionsResultsToSave>
             <bytes>true</bytes>
             <sentBytes>true</sentBytes>
-            <url>true</url>
             <threadCounts>true</threadCounts>
             <idleTime>true</idleTime>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">C:\Jmeter_logs\NOTES.xml</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -182,13 +234,12 @@
             <assertionsResultsToSave>0</assertionsResultsToSave>
             <bytes>true</bytes>
             <sentBytes>true</sentBytes>
-            <url>true</url>
             <threadCounts>true</threadCounts>
             <idleTime>true</idleTime>
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">C:\Jmeter_logs\NOTES.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -228,61 +279,8 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="false">
-        <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="influxdbMetricsSender" elementType="Argument">
-              <stringProp name="Argument.name">influxdbMetricsSender</stringProp>
-              <stringProp name="Argument.value">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="influxdbUrl" elementType="Argument">
-              <stringProp name="Argument.name">influxdbUrl</stringProp>
-              <stringProp name="Argument.value">http://host_to_change:8086/write?db=jmeter</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="application" elementType="Argument">
-              <stringProp name="Argument.name">application</stringProp>
-              <stringProp name="Argument.value">application name</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="measurement" elementType="Argument">
-              <stringProp name="Argument.name">measurement</stringProp>
-              <stringProp name="Argument.value">jmeter</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="summaryOnly" elementType="Argument">
-              <stringProp name="Argument.name">summaryOnly</stringProp>
-              <stringProp name="Argument.value">false</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="samplersRegex" elementType="Argument">
-              <stringProp name="Argument.name">samplersRegex</stringProp>
-              <stringProp name="Argument.value">.*</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="percentiles" elementType="Argument">
-              <stringProp name="Argument.name">percentiles</stringProp>
-              <stringProp name="Argument.value">99;95;90</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="testTitle" elementType="Argument">
-              <stringProp name="Argument.name">testTitle</stringProp>
-              <stringProp name="Argument.value">Test name</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="eventTags" elementType="Argument">
-              <stringProp name="Argument.name">eventTags</stringProp>
-              <stringProp name="Argument.value"></stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </elementProp>
-        <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
-      </BackendListener>
-      <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_01_Просмотр записки" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Настройка параметров запуска скрипта" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
@@ -293,9 +291,111 @@
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.util.JMeterUtils;
+
+if (vars.&quot;smoke&quot; == &quot;true&quot;){
+	
+}
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.util.JMeterUtils
+import org.apache.jmeter.engine.StandardJmeterEngine
+import org.apache.jmeter.threads.ThreadGroup
+import org.apache.jorphan.collections.HashTree
+import org.apache.jorphan.collections.SearchByClass
+import java.lang.reflect.Field
+
+def loops = 1
+def engine = ctx.getEngine()
+def test = engine.getClass().getDeclareField(&quot;test&quot;)
+test.setAccessible(true)
+def testPlanTree = (HashTree) test.get(engine)
+def threadGroupSearch = new SearchByClass&lt;&gt;(ThreadGroup.class)
+testPlanTree.traverse(threadGroupSearch)
+def threadGroups = threadGroupSearch.getSearchResults()
+
+int vusers = 0
+def pacing = 0
+
+if (vars.&quot;smoke&quot; == &quot;true&quot;){
+	vusers = 1
+	for (th in threadGroups){
+		th.setScheduler(false)
+		th.getSamplerController().setLoops(loops)
+	}
+}
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223PostProcessor>
+        <hashTree/>
+        <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">import org.apache.jmeter.util.JMeterUtils
+import org.apache.jmeter.engine.StandardJmeterEngine
+import org.apache.jmeter.threads.ThreadGroup
+import org.apache.jorphan.collections.HashTree
+import org.apache.jorphan.collections.SearchByClass
+import java.lang.reflect.Field
+
+def loops = 1
+def engine = ctx.getEngine()
+def test = engine.getClass().getDeclareField(&quot;test&quot;)
+test.setAccessible(true)
+def testPlanTree = (HashTree) test.get(engine)
+def threadGroupSearch = new SearchByClass&lt;&gt;(ThreadGroup.class)
+testPlanTree.traverse(threadGroupSearch)
+def threadGroups = threadGroupSearch.getSearchResults()
+
+int vusers = 0
+def pacing = 0
+
+if (vars.&quot;smoke&quot; == &quot;true&quot;){
+	vusers = 1
+	for (th in threadGroups){
+		th.setScheduler(false)
+		th.getSamplerController().setLoops(loops)
+	}
+}
+</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223PostProcessor>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler (smoke = ${smoke}" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_01_Просмотр записки" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${UC01_VU}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${VU_RAMPUP}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${DUR_TIME}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Timer" enabled="false">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Timer" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -303,11 +403,7 @@
         <hashTree>
           <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Timer" enabled="true">
             <intProp name="calcMode">0</intProp>
-            <doubleProp>
-              <name>throughput</name>
-              <value>1.0</value>
-              <savedValue>0.0</savedValue>
-            </doubleProp>
+            <stringProp name="throughput">${UC01_PACING}</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
@@ -328,6 +424,21 @@
             <boolProp name="CacheManager.controlledByThread">false</boolProp>
           </CacheManager>
           <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="1.0 (TC) Подготовка данных" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="01 (bsh) Установка параметров" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.util.JMeterUtils;
+
+vars.put(&quot;TC_ON_INDEX_PAGE&quot;, &quot;1.1&quot;)</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="1.1 (MC) Вход на index page notes app" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
@@ -374,8 +485,8 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_02_Удаление случайной записки" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_02_Удаление случайной записки" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
@@ -396,11 +507,7 @@
         <hashTree>
           <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Timer" enabled="true">
             <intProp name="calcMode">0</intProp>
-            <doubleProp>
-              <name>throughput</name>
-              <value>30.0</value>
-              <savedValue>0.0</savedValue>
-            </doubleProp>
+            <stringProp name="throughput">${UC02_PACING}</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
@@ -421,6 +528,21 @@
             <boolProp name="CacheManager.controlledByThread">false</boolProp>
           </CacheManager>
           <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="2.0 (TC) Подготовка данных" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="01 (bsh) Установка параметров" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.util.JMeterUtils;
+
+vars.put(&quot;TC_ON_INDEX_PAGE&quot;, &quot;2.1&quot;)</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="2.1 (MC) Вход на index page notes app" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
@@ -536,8 +658,8 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_03_Изменение случайной записки" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_03_Изменение случайной записки" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
@@ -558,11 +680,7 @@
         <hashTree>
           <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Timer" enabled="true">
             <intProp name="calcMode">0</intProp>
-            <doubleProp>
-              <name>throughput</name>
-              <value>30.0</value>
-              <savedValue>0.0</savedValue>
-            </doubleProp>
+            <stringProp name="throughput">${UC03_PACING}</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
@@ -583,6 +701,21 @@
             <boolProp name="CacheManager.controlledByThread">false</boolProp>
           </CacheManager>
           <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="3.0 (TC) Подготовка данных" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="01 (bsh) Установка параметров" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.util.JMeterUtils;
+
+vars.put(&quot;TC_ON_INDEX_PAGE&quot;, &quot;3.1&quot;)</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="3.1 (MC) Вход на index page notes app" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
@@ -728,11 +861,11 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_04_Создание новой записки" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_04_Создание новой записки" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">2</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -750,11 +883,7 @@
         <hashTree>
           <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Timer" enabled="true">
             <intProp name="calcMode">0</intProp>
-            <doubleProp>
-              <name>throughput</name>
-              <value>30.0</value>
-              <savedValue>0.0</savedValue>
-            </doubleProp>
+            <stringProp name="throughput">${UC04_PACING}</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
@@ -775,6 +904,21 @@
             <boolProp name="CacheManager.controlledByThread">false</boolProp>
           </CacheManager>
           <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="4.0 (TC) Подготовка данных" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="01 (bsh) Установка параметров" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.util.JMeterUtils;
+
+vars.put(&quot;TC_ON_INDEX_PAGE&quot;, &quot;4.1&quot;)</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="4.1 (MC) Вход на index page notes app" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
@@ -911,8 +1055,8 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_05_Проверка в Django admin" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC_05_Проверка в Django admin" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
@@ -933,26 +1077,10 @@
         <hashTree>
           <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Timer" enabled="true">
             <intProp name="calcMode">0</intProp>
-            <doubleProp>
-              <name>throughput</name>
-              <value>30.0</value>
-              <savedValue>0.0</savedValue>
-            </doubleProp>
+            <stringProp name="throughput">${UC05_PACING}</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
-          <collectionProp name="CookieManager.cookies"/>
-          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
-          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
-        </CookieManager>
-        <hashTree/>
-        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
-          <boolProp name="clearEachIteration">true</boolProp>
-          <boolProp name="useExpires">false</boolProp>
-          <boolProp name="CacheManager.controlledByThread">false</boolProp>
-        </CacheManager>
-        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_05_Проверка в Django admin" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
@@ -970,6 +1098,21 @@
             <boolProp name="CacheManager.controlledByThread">false</boolProp>
           </CacheManager>
           <hashTree/>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="5.0 (TC) Подготовка данных" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="01 (bsh) Установка параметров" enabled="true">
+              <stringProp name="BeanShellSampler.query">import org.apache.jmeter.util.JMeterUtils;
+
+vars.put(&quot;TC_ON_INDEX_PAGE&quot;, &quot;5.1&quot;)</stringProp>
+              <stringProp name="BeanShellSampler.filename"></stringProp>
+              <stringProp name="BeanShellSampler.parameters"></stringProp>
+              <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+            </BeanShellSampler>
+            <hashTree/>
+          </hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="5.1 (MC) Вход на index page notes app" enabled="true">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="764597751">Test Plan</stringProp>
@@ -1281,6 +1424,41 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Отключенные кейсы" enabled="false"/>
       <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="UDV MAIN_test_data" enabled="false">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="NOTE_TITLE" elementType="Argument">
+            <stringProp name="Argument.name">NOTE_TITLE</stringProp>
+            <stringProp name="Argument.value">${__RandomString(6, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOTE_SLUG" elementType="Argument">
+            <stringProp name="Argument.name">NOTE_SLUG</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOTE_BODY" elementType="Argument">
+            <stringProp name="Argument.name">NOTE_BODY</stringProp>
+            <stringProp name="Argument.value">${__RandomString(15, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOTE_NEW_TITLE" elementType="Argument">
+            <stringProp name="Argument.name">NOTE_NEW_TITLE</stringProp>
+            <stringProp name="Argument.value">${__RandomString(3, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOTE_NEW_SLUG" elementType="Argument">
+            <stringProp name="Argument.name">NOTE_NEW_SLUG</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NOTE_NEW_BODY" elementType="Argument">
+            <stringProp name="Argument.name">NOTE_NEW_BODY</stringProp>
+            <stringProp name="Argument.value">${__RandomString(9, qwertyuiopasdfghjklzxcvbnm)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -1317,7 +1495,7 @@
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF Вход на index page notes app " enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Вход на index page notes app" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="${TC_ON_INDEX_PAGE} (TC) Вход на index page notes app" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
