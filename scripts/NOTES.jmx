@@ -26,8 +26,8 @@
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Продолжительность теста, сек</stringProp>
           </elementProp>
-          <elementProp name="COUNT_SERVER" elementType="Argument">
-            <stringProp name="Argument.name">COUNT_SERVER</stringProp>
+          <elementProp name="SERVERS_COUNT" elementType="Argument">
+            <stringProp name="Argument.name">SERVERS_COUNT</stringProp>
             <stringProp name="Argument.value">2</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Количество серверов с которых подаётся нагрузка</stringProp>
@@ -62,9 +62,19 @@
           </elementProp>
           <elementProp name="smoke" elementType="Argument">
             <stringProp name="Argument.name">smoke</stringProp>
-            <stringProp name="Argument.value">${__P(SMOKE, false)}</stringProp>
+            <stringProp name="Argument.value">${__P(SMOKE, true)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">false - нет, true - да</stringProp>
+          </elementProp>
+          <elementProp name="CHECKER_HOST" elementType="Argument">
+            <stringProp name="Argument.name">CHECKER_HOST</stringProp>
+            <stringProp name="Argument.value">127.0.0.1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CHEСKER_PORT" elementType="Argument">
+            <stringProp name="Argument.name">CHEСKER_PORT</stringProp>
+            <stringProp name="Argument.value">5555</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
@@ -129,7 +139,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener Influx v1" enabled="true">
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener Influx v1" enabled="false">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="influxdbMetricsSender" elementType="Argument">
@@ -245,7 +255,7 @@
         <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
       </BackendListener>
       <hashTree/>
-      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -281,7 +291,7 @@
         <stringProp name="filename">${TEST_LOG_PATH}NOTES.xml</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -368,36 +378,114 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </SetupThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
-          <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="script">import org.apache.jmeter.util.JMeterUtils
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="(TC) Получение профиля" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="(TC) Получение профиля" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;app&quot;:&quot;NOTES&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${CHECKER_HOST}</stringProp>
+            <stringProp name="HTTPSampler.port">${CHEСKER_PORT}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/api/profile/get</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1788640391">SYSTEM_PROFILE</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">PROFILE</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.SYSTEM_PROFILE..[&apos;JMETER_TAG&apos;,&apos;INTENSIVITY&apos;]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">PROFILE_ERROR_json_extractor</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 Parse Profile" enabled="true">
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="script">import org.apache.jmeter.util.JMeterUtils
 import org.apache.jmeter.engine.StandardJMeterEngine
 import org.apache.jmeter.threads.ThreadGroup
 import org.apache.jorphan.collections.HashTree
 import org.apache.jorphan.collections.SearchByClass
 import java.lang.reflect.Field
 
+// Выполнение в случае успешного http ответа &quot;Получение профиля&quot;
+if (prev.isSuccessful()){
+	// Переменные для смок теста
+	def loops = 1
+	def engine = ctx.getEngine()
+	def test = engine.getClass().getDeclaredField(&quot;test&quot;)
+	test.setAccessible(true)
+	def testPlanTree = (HashTree) test.get(engine)
+	def threadGroupSearch = new SearchByClass&lt;&gt;(ThreadGroup.class)
+	testPlanTree.traverse(threadGroupSearch)
+	def threadGroups = threadGroupSearch.getSearchResults()	
 
-def loops = 1
-def engine = ctx.getEngine()
-def test = engine.getClass().getDeclaredField(&quot;test&quot;)
-test.setAccessible(true)
-def testPlanTree = (HashTree) test.get(engine)
-def threadGroupSearch = new SearchByClass&lt;&gt;(ThreadGroup.class)
-testPlanTree.traverse(threadGroupSearch)
-def threadGroups = threadGroupSearch.getSearchResults()
 
-if (vars.&quot;smoke&quot; == &quot;true&quot;){
-	for (th in threadGroups){
-		th.setScheduler(false)
-		th.getSamplerController().setLoops(loops)
+	log.info &quot;TEST&quot;
+	if (vars.&quot;smoke&quot; == &quot;true&quot;){
+		log.info &quot;IN if&quot;
+		for (th in threadGroups){
+			th.setScheduler(false)
+			th.getSamplerController().setLoops(loops)
 	}
-}</stringProp>
-          <stringProp name="scriptLanguage">groovy</stringProp>
-        </JSR223Sampler>
-        <hashTree/>
+}
+
+	
+}
+
+
+
+//if (vars.&quot;smoke&quot; == &quot;true&quot;){
+//	for (th in threadGroups){
+//		th.setScheduler(false)
+//		th.getSamplerController().setLoops(loops)
+//	}
+//}</stringProp>
+              <stringProp name="scriptLanguage">groovy</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
         <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler (smoke = ${smoke})" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
@@ -405,7 +493,7 @@ if (vars.&quot;smoke&quot; == &quot;true&quot;){
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC 01 Просмотр записки" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC 01 Просмотр записки" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
