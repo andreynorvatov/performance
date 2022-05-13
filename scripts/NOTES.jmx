@@ -16,13 +16,13 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="RAMPUP" elementType="Argument">
             <stringProp name="Argument.name">RAMPUP</stringProp>
-            <stringProp name="Argument.value">${__P(RUMPUP, 30)}</stringProp>
+            <stringProp name="Argument.value">${__P(RUMPUP, 0)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Время выхода на нагрузку, сек</stringProp>
           </elementProp>
           <elementProp name="DURATION" elementType="Argument">
             <stringProp name="Argument.name">DURATION</stringProp>
-            <stringProp name="Argument.value">${__longSum(${__P(DURATION,180)}, ${__P(RUMPUP, 30)})}</stringProp>
+            <stringProp name="Argument.value">${__longSum(${__P(DURATION,60)}, ${__P(RUMPUP, 0)})}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Продолжительность теста, сек</stringProp>
           </elementProp>
@@ -40,8 +40,9 @@
           </elementProp>
           <elementProp name="TEST_HOST" elementType="Argument">
             <stringProp name="Argument.name">TEST_HOST</stringProp>
-            <stringProp name="Argument.value">127.0.0.1</stringProp>
+            <stringProp name="Argument.value">192.168.1.142</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">192.168.1.9</stringProp>
           </elementProp>
           <elementProp name="TEST_PORT" elementType="Argument">
             <stringProp name="Argument.name">TEST_PORT</stringProp>
@@ -54,15 +55,9 @@
             <stringProp name="Argument.desc">${__P(TEST_NUM, 0)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="TEST_LOG_PATH" elementType="Argument">
-            <stringProp name="Argument.name">TEST_LOG_PATH</stringProp>
-            <stringProp name="Argument.value">${__P(LOG_PATH, C:\\Jmeter_logs\\)}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">Путь до директории</stringProp>
-          </elementProp>
           <elementProp name="smoke" elementType="Argument">
             <stringProp name="Argument.name">smoke</stringProp>
-            <stringProp name="Argument.value">${__P(SMOKE, true)}</stringProp>
+            <stringProp name="Argument.value">${__P(SMOKE, false)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">false - нет, true - да</stringProp>
           </elementProp>
@@ -113,7 +108,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="UC01_PACING" elementType="Argument">
             <stringProp name="Argument.name">UC01_PACING</stringProp>
-            <stringProp name="Argument.value">60</stringProp>
+            <stringProp name="Argument.value">30</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="UC02_PACING" elementType="Argument">
@@ -139,7 +134,7 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener Influx v1" enabled="false">
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener Influx v1" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="influxdbMetricsSender" elementType="Argument">
@@ -288,7 +283,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">${TEST_LOG_PATH}NOTES.xml</stringProp>
+        <stringProp name="filename">${__P(TEST_LOG_PATH,)}NOTES.xml</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
@@ -324,7 +319,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">${TEST_LOG_PATH}NOTES.csv</stringProp>
+        <stringProp name="filename">${__P(TEST_LOG_PATH,)}NOTES.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
@@ -364,7 +359,7 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Настройка параметров запуска скрипта" enabled="true">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="Настройка параметров запуска скрипта" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -399,7 +394,7 @@
             <stringProp name="HTTPSampler.domain">${CHECKER_HOST}</stringProp>
             <stringProp name="HTTPSampler.port">${CHEСKER_PORT}</stringProp>
             <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
             <stringProp name="HTTPSampler.path">/api/profile/get</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -493,7 +488,7 @@ if (prev.isSuccessful()){
         </DebugSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC 01 Просмотр записки" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="UC 01 Просмотр записки" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
