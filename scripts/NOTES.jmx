@@ -40,9 +40,9 @@
           </elementProp>
           <elementProp name="TEST_HOST" elementType="Argument">
             <stringProp name="Argument.name">TEST_HOST</stringProp>
-            <stringProp name="Argument.value">192.168.1.142</stringProp>
+            <stringProp name="Argument.value">192.168.1.9</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
-            <stringProp name="Argument.desc">192.168.1.9</stringProp>
+            <stringProp name="Argument.desc">N: 192.168.1.142, PK: 192.168.1.9</stringProp>
           </elementProp>
           <elementProp name="TEST_PORT" elementType="Argument">
             <stringProp name="Argument.name">TEST_PORT</stringProp>
@@ -322,7 +322,7 @@
         <stringProp name="filename">${__P(TEST_LOG_PATH,)}NOTES.csv</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
